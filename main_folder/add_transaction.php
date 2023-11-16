@@ -39,7 +39,7 @@ if (isset($_POST['submit'])) {
                 VALUES ('$datelog', '$documentcode', '$action', '$office', '$employee_id', '$remarks')";
 
         if (mysqli_query($conn, $sql)) {
-            header("Location: office.php");
+            header("Location: transaction.php");
             exit();
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);

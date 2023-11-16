@@ -30,7 +30,7 @@
   line-height: calc(1em + 0.5rem);
 }
 h2, label{
-  color: var(--clr-light)!important;
+  color: black!important;
 }
 html{
   scroll-behavior: smooth;
@@ -56,9 +56,11 @@ a {
 strong {
   color: var(--clr-blue)
 }
-
+.btn{
+  background-color: #374151!important;
+}
 .btn:hover{
-  background-color: #BE3144!important;
+  background-color: #31b2be!important;
 }
 .edit-anchor:hover , .delete-anchor:hover{
   color: #BE3144;
@@ -118,6 +120,8 @@ strong {
 
   .header-link:hover {
     color: var(--clr-red);
+    border: 1px solid black;
+    padding: 6px;
   }
 
   .seperator{
