@@ -73,14 +73,15 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
 <body>
     <div class="wrapper">
         <!-- sidebar start-->
-        <div id="sidebarContainer"></div>
-            <!-- sidebar end-->
-            
+        <div class="sidebar-wrapper">
+                <?php include './template/sidebar.html'; ?>
+        </div>
+        <!-- sidebar end-->
+        
         <div class="main-panel">
-                <!-- navbar start-->
-            <div id="navbarContainer"></div>
-                <!-- navbar end-->
-
+            <!-- navbar start-->
+            <?php include "./template/navbar.html"; ?>
+            <!-- navbar end-->
             <div class="content">
                 <div class="container-fluid">
                     <h2>Edit Employee</h2>
@@ -126,6 +127,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                     </form>
                     <?php
                     if (isset($_POST['submit'])) {
+                        session_start();
                         $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
                         $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
                         $address = mysqli_real_escape_string($conn, $_POST['address']);
@@ -141,7 +143,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                                         WHERE e.id = $id";
 
                         if (mysqli_query($conn, $updateQuery)) {
-                            echo "<script>alert('Employee record with ID: " . $row['id'] . " has been successfully edited!');</script>";
+                            echo "<script>alert('Employee record with ID: " . $row['id'] . " has been successfully edited!'); window.location='employee.php';</script>";
                             exit();
                         } else {
                             echo "<script>alert('Error updating record: " . mysqli_error($conn) . "');</script>";
