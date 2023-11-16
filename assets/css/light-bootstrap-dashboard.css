@@ -357,7 +357,12 @@ body>.navbar-collapse .sidebar-wrapper {
     width: 260px;
     z-index: 4;
     padding-bottom: 100px;
+
 }
+.sidebar .sidebar-wrapper .logo img {
+    opacity: 1!important;
+}
+
 
 .sidebar .sidebar-background,
 body>.navbar-collapse .sidebar-background {
@@ -428,12 +433,13 @@ body>.navbar-collapse .nav {
 
 .sidebar .nav li .nav-link,
 body>.navbar-collapse .nav li .nav-link {
-    color: #FFFFFF;
-    margin: 5px 15px;
+    color: #F0EBCE;
+    margin: 5px 10px;
     opacity: .86;
     border-radius: 4px;
     display: block;
-    padding: 10px 15px;
+    padding: 10px 30px;
+    font-size: 40px;
 }
 
 .sidebar .nav li .nav-link:hover,
@@ -1406,6 +1412,7 @@ fieldset[disabled] .btn-neutral.active {
 
 .btn-simple.btn-icon {
     padding: 8px;
+    color: black;
 }
 
 .btn-lg {
@@ -2836,19 +2843,22 @@ Copyright (c) 2015 Daniel Eden
 
 .card .card-body {
     padding: 15px 15px 10px 15px;
+    width: 99.94%;
+    margin: auto;
+    color: #000000;
 }
 
 .card .card-header {
     padding: 15px 15px 0;
-    background-color: #FFFFFF;
-    border-bottom: none !important;
+    background-color: #1DC7EA;
+    padding-bottom: 1em;
 }
 
 .card .card-category,
 .card label {
     font-size: 14px;
     font-weight: 400;
-    color: #9A9A9A;
+    color: #F0EBCE;
     margin-bottom: 0px;
 }
 
@@ -2879,7 +2889,8 @@ Copyright (c) 2015 Daniel Eden
 
 .card .description {
     font-size: 14px;
-    color: #333;
+    color: #F0EBCE;
+    font-size: 14px;
 }
 
 .card .card-footer {
@@ -2928,7 +2939,6 @@ Copyright (c) 2015 Daniel Eden
     top: 0;
     width: 1px;
     background-color: #DDDDDD;
-    card-body: "";
     position: absolute;
 }
 
@@ -2944,6 +2954,18 @@ Copyright (c) 2015 Daniel Eden
 .card .table tbody td:first-child,
 .card .table thead th:first-child {
     padding-left: 15px;
+}
+
+.card .table thead th{
+    color: #c3c3c3;
+    font-size: 1rem;
+    font-weight: bold;
+
+}
+.card .card-header h4{
+    color: #000000;
+    font-size: 2rem;
+    font-weight: bold;
 }
 
 .card .table tbody td:last-child,
@@ -3009,6 +3031,9 @@ Copyright (c) 2015 Daniel Eden
     border: 5px solid #FFFFFF;
     position: relative;
     margin-bottom: 15px;
+    margin: 0 auto; 
+    display: block;
+
 }
 
 .card-user .avatar.border-gray {
@@ -3017,6 +3042,9 @@ Copyright (c) 2015 Daniel Eden
 
 .card-user .title {
     line-height: 24px;
+    color: #FA7070;
+    font-weight: bold;
+    margin-top: 1rem;
 }
 
 .card-user .card-body {
@@ -3987,6 +4015,7 @@ Copyright (c) 2015 Daniel Eden
         -ms-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
         transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
     }
+
     .nav-open .main-panel {
         position: absolute;
         left: 0;
