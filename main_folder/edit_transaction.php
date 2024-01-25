@@ -28,9 +28,9 @@ if(isset($_GET['edit']) && !empty($_GET['edit'])) {
                 e.firstname as firstname,
                 CONCAT(e.lastname, ' ', e.firstname) as employee,
                 t.remarks
-            FROM recordapp_db.transaction t
-            INNER JOIN recordapp_db.employee e ON t.employee_id = e.id
-            INNER JOIN recordapp_db.office o ON e.office_id = o.id WHERE t.id = $id";
+            FROM recordsapp_db.transaction t
+            INNER JOIN recordsapp_db.employee e ON t.employee_id = e.id
+            INNER JOIN recordsapp_db.office o ON e.office_id = o.id WHERE t.id = $id";
 
     $result = $conn->query($sql);
 
@@ -124,7 +124,7 @@ if(isset($_GET['edit']) && !empty($_GET['edit'])) {
                     echo "<div class='form-group'>";
                         echo "<label for='office'>OFFICE: </label>";
                         $selectedOffice = isset($office) ? $office : '';
-                        $sql2 = "SELECT name FROM recordapp_db.office WHERE id=3;";
+                        $sql2 = "SELECT name FROM recordsapp_db.office WHERE id=3;";
                         $result2 = $conn->query($sql2);
                         if ($result2) {
                             
@@ -170,12 +170,12 @@ if(isset($_GET['edit']) && !empty($_GET['edit'])) {
                             $firstname = $_POST['firstname'];
                             $remarks = $_POST['remarks'];
 
-                            $updateQuery = "UPDATE recordapp_db.transaction t
-                                            INNER JOIN recordapp_db.employee e ON t.employee_id = e.id
+                            $updateQuery = "UPDATE recordsapp_db.transaction t
+                                            INNER JOIN recordsapp_db.employee e ON t.employee_id = e.id
                                             SET
                                             t.documentcode = '$documentcode',
                                             t.action = '$action',
-                                            e.office_id = (SELECT id FROM recordapp_db.office WHERE name = '$office'),
+                                            e.office_id = (SELECT id FROM recordsapp_db.office WHERE name = '$office'),
                                             e.lastname = '$lastname',
                                             e.firstname = '$firstname',
                                             t.remarks = '$remarks'

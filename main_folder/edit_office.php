@@ -18,7 +18,7 @@ include "db_conn.php";
 if (isset($_GET['edit']) && !empty($_GET['edit'])) {
     $id = $_GET['edit'];
 
-    $sql = "SELECT id, name, contactnum, email, address, city, country, postal FROM recordapp_db.office WHERE id = $id";
+    $sql = "SELECT id, name, contactnum, email, address, city, country, postal FROM recordsapp_db.office WHERE id = $id";
     
     $result = $conn->query($sql);
 
@@ -143,7 +143,7 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                     $email = mysqli_real_escape_string($conn, $_POST['email']);
                     $city = mysqli_real_escape_string($conn, $_POST['city']);
                     $postal = mysqli_real_escape_string($conn, $_POST['postal']);
-                    $updateQuery = "UPDATE recordapp_db.office
+                    $updateQuery = "UPDATE recordsapp_db.office
                                     SET
                                     name = ?,
                                     contactnum = ?,

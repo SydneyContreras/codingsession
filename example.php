@@ -9,7 +9,7 @@
   $servername = "localhost";
   $username = "root";
   $password = "root";
-  $dbase = "recordapp_db";
+  $dbase = "recordsapp_db";
 
   // Create connection
   $conn = new mysqli($servername, $username, $password, $dbase);
@@ -18,7 +18,7 @@
   if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
   }
-    $sql = "SELECT name FROM recordapp_db.office WHERE id=3;";
+    $sql = "SELECT name FROM recordsapp_db.office WHERE id=3;";
     $result = $conn->query($sql);
 
     if ($result === false) {

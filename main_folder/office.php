@@ -71,7 +71,7 @@
                                 </div>
                                 <?php
                                 include "db_conn.php";
-                                $sql = "SELECT name, id, contactnum, email, address, city, postal FROM recordapp_db.office";
+                                $sql = "SELECT name, id, contactnum, email, address, city, postal FROM recordsapp_db.office";
                                 $result = $conn->query($sql);
                                 echo "<div class='card-body table-full-width table-responsive'>";
                                 echo "<table  id='office-table' class='table table-hover table-striped'>";

@@ -6,13 +6,13 @@
 <body>
 
 <?php
-  $servername = "localhost";
-  $username = "root";
-  $password = "root";
-  $dbase = "recordapp_db";
-
-  // Create connection
-  $conn = new mysqli($servername, $username, $password, $dbase);
+  $host = 'localhost';
+  $username = 'root';
+  $password = 'root';
+  $database = 'recordsapp_db';
+  
+  $conn = new mysqli($host, $username, $password, $database);
+  
 
   // Check connection
   if ($conn->connect_error) {

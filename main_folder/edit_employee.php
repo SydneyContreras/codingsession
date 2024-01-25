@@ -24,8 +24,8 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                 e.firstname,
                 e.address,
                 o.name as office
-            FROM recordapp_db.employee e
-            INNER JOIN recordapp_db.office o ON e.office_id = o.id
+            FROM recordsapp_db.employee e
+            INNER JOIN recordsapp_db.office o ON e.office_id = o.id
             WHERE e.id = $id"; 
 
     $result = $conn->query($sql);
@@ -133,13 +133,13 @@ if (isset($_GET['edit']) && !empty($_GET['edit'])) {
                         $address = mysqli_real_escape_string($conn, $_POST['address']);
                         $office = mysqli_real_escape_string($conn, $_POST['office']);
 
-                        $updateQuery = "UPDATE recordapp_db.employee e
-                                        INNER JOIN recordapp_db.office o ON o.id = e.office_id
+                        $updateQuery = "UPDATE recordsapp_db.employee e
+                                        INNER JOIN recordsapp_db.office o ON o.id = e.office_id
                                         SET
                                         e.lastname = '$lastname',
                                         e.firstname = '$firstname',
                                         e.address = '$address', 
-                                        e.office_id = (SELECT id FROM recordapp_db.office WHERE name = '$office' LIMIT 1)
+                                        e.office_id = (SELECT id FROM recordsapp_db.office WHERE name = '$office' LIMIT 1)
                                         WHERE e.id = $id";
 
                         if (mysqli_query($conn, $updateQuery)) {
